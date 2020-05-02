@@ -8,9 +8,12 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "emaily": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run emaily\" \"npm run client\""
   },
   "dependencies": {
+    "concurrently": "^5.1.0",
     "cookie-parser": "~1.4.4",
     "cookie-session": "^1.4.0",
     "debug": "~2.6.9",
